@@ -5,16 +5,13 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.use(express.static("./public"))
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutsdb", { userNewUrlParser: true});
 
 const db = require("./models");
-
-app.get("/",(req,res) => {
-    res.sendFile(path.join(_dirname, "./pulic/index.html"));
-});
-
-db.User.create({name: "Hongjing"})
-
+app.use(require("./routes/htmlRoutes"));
+app.use(require("./routes/apiRoutes"));
 app.listen(PORT, () => {
-    console.log('App running on link http://localhost:'${PORT}');
+    console.log(`App running on link http://localhost:${PORT}`);
 });
