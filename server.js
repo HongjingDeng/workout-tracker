@@ -15,3 +15,5 @@ app.use(require("./routes/apiRoutes"));
 app.listen(PORT, () => {
     console.log(`App running on link http://localhost:${PORT}`);
 });
+
+// mongodb+srv://workout-tracker:hongjing123@cluster0.ectr2.mongodb.net/workoutsdb?retryWrites=true&w=majority
