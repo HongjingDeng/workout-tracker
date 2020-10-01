@@ -17,7 +17,7 @@ Router.get("/api/workouts/range", (req,res) => {
 
 
 
-
+module.exports = Router;
 
 
 
