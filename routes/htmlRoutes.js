@@ -14,7 +14,4 @@ Router.get("/exercise",(req,res) => {
 });
 
 
-
-
-
 module.exports = Router;

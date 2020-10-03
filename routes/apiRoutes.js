@@ -1,4 +1,5 @@
 const Router = require("express").Router();
+//Bring in models
 const db = require("../models");
 
 //get last workouts
