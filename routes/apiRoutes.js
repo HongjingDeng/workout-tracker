@@ -4,7 +4,7 @@ const db = require("../models");
 
 //get last workouts
 Router.get("/api/workouts", (req, res) => {
-    db.Workout.find({}).sort({ day: -1 }).limit(1)
+    db.Workout.find({}).sort({ day: -1 })
         .then(dbWorkout => {
             res.json(dbWorkout);
         })
@@ -14,9 +14,10 @@ Router.get("/api/workouts", (req, res) => {
 });
 
 //add exercise
-Router.put("/api/workouts/", (req, res) => {
+Router.put("/api/workouts/:id", (req, res) => {
     let urlData = req.params;
     let data = req.body;
+
     db.Workout.updateOne({ _id: urlData.id }, {
         $push: {
             exercises: [

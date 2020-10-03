@@ -1,17 +1,26 @@
-const mongoose = require("mongoose");
-require('dotenv/config');
+// const mongoose = require("mongoose");
+// require('dotenv/config');
 
-const dbConfig = process.env.MONGODB_URI;
-
-
-async function connectDB(){
-  await mongoose.connect(dbConfig,{
-      useNewUrlParser: true,
-      useUnifiedTopology: true  
-  }, () =>  
-  console.log("Connected to DB")
-);
-}
+// const dbConfig = process.env.MONGODB_URI;
 
 
-module.exports = connectDB;
+// async function connectDB(){
+//   await mongoose.connect(dbConfig,{
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true  
+//   }, () =>  
+//   console.log("Connected to DB")
+// );
+// }
+
+
+// module.exports = connectDB;
+
+//const mongoose = require('mongoose');
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workoutsdb', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true,
+//   useFindAndModify: false,
+//  });
+//  module.exports = mongoose.connection;
