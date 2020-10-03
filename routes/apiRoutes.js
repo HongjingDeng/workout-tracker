@@ -1,5 +1,7 @@
 const Router = require("express").Router();
+const db = require("../models");
 
+//get last workouts
 Router.get("/api/workouts", (req, res) => {
     db.Workout.find({}).sort({ day: -1 }).limit(1)
         .then(dbWorkout => {
@@ -10,6 +12,7 @@ Router.get("/api/workouts", (req, res) => {
         });
 });
 
+//add exercise
 Router.put("/api/workouts/", (req, res) => {
     let urlData = req.params;
     let data = req.body;
@@ -34,6 +37,8 @@ Router.put("/api/workouts/", (req, res) => {
             res.json(err);
         });
 });
+
+//create workouts
 Router.post("/api/workouts", (req, res) => {
     let data = req.body;
 
@@ -47,6 +52,7 @@ Router.post("/api/workouts", (req, res) => {
         });
 });
 
+//// Gets workouts in range
 Router.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
         .then(dbWorkout => {
