@@ -14,7 +14,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("./public"))
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutsdb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_ATLAS_URI || "mongodb://localhost/workoutsdb", { useNewUrlParser: true });
 
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
