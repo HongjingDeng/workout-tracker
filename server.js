@@ -6,7 +6,8 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-// Database Connection Request
+const db = require("./models");
+
 require('dotenv/config');
 const connectDB = require("./config/connectDB.js");
 
@@ -20,7 +21,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutsdb", { 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const db = require("./models");
 app.use(require("./routes/htmlRoutes"));
 app.use(require("./routes/apiRoutes"));
 

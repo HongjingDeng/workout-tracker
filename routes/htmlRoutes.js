@@ -1,6 +1,8 @@
 const Router = require("express").Router();
 const path = require("path");
 
+const db = require("./models");
+
 Router.get("/",(req,res) => {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
